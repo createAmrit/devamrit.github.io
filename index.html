@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🎁 Exclusive Gift Drop</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    body {
+      background: url('background.png') no-repeat center center fixed; /* Background image */
+      background-size: cover; /* Ensure the image covers the entire background */
+      color: #fff; /* Default text color */
+      text-align: center;
+      padding: 50px 20px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      border: 10px solid #ffd700; /* Golden border */
+      border-radius: 15px; /* Rounded corners */
+      box-shadow: 0px 0px 20px rgba(255, 215, 0, 0.5); /* Glow effect */
+    }
+
+    h1 {
+      font-size: 3rem;
+      color: #ffd700; /* Bright golden color for the heading */
+      margin-bottom: 40px;
+      animation: fadeIn 1s ease-in-out;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Add shadow for better visibility */
+      background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+      padding: 10px;
+      border-radius: 10px;
+      display: inline-block;
+    }
+
+    .btn {
+      background: linear-gradient(to right, #ff7e5f, #feb47b); /* Gradient color for buttons */
+      color: white;
+      padding: 8px 15px; /* Adjusted padding */
+      border: none;
+      border-radius: 50px;
+      font-size: 0.9rem; /* Adjusted font size */
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+      margin: 10px;
+      min-width: 130px; /* Adjusted width for laptops */
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    .btn:hover {
+      background: linear-gradient(to right, #feb47b, #ff7e5f); /* Reverse gradient on hover */
+      transform: translateY(-3px);
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    #note {
+      font-size: 1.2rem;
+      margin: 20px 0;
+      color: #fff; /* White text for better visibility */
+      line-height: 1.6;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); /* Add shadow for better visibility */
+      background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+      padding: 10px;
+      border-radius: 10px;
+      display: inline-block;
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 1rem;
+      color: #fff; /* White text for better visibility */
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); /* Add shadow for better visibility */
+      background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+      padding: 10px;
+      border-radius: 10px;
+      display: inline-block;
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Mobile responsiveness */
+    @media (max-width: 768px) {
+      body {
+        padding: 30px 15px;
+        border-width: 5px; /* Adjust border width for smaller screens */
+      }
+
+      h1 {
+        font-size: 2.5rem;
+        margin-bottom: 30px;
+      }
+
+      .btn {
+        font-size: 0.8rem; /* Further reduce font size for smaller screens */
+        padding: 6px 12px; /* Adjust padding */
+        min-width: 100px; /* Reduce button width for smaller screens */
+      }
+
+      #note {
+        font-size: 1rem;
+        margin: 15px 0;
+      }
+
+      footer {
+        font-size: 0.9rem;
+        margin-top: 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>🎁 Exclusive Gift Drop!</h1>
+
+  <button class="btn" onclick="revealNote()">🎁 Claim Your Gift</button>
+
+  <p id="note" class="hidden">
+    Just <strong>DM Amrit</strong> and tell him:<br /> 
+    <em>"You're the best gamer of all time!"</em>
+  </p>
+
+  <a href="https://www.instagram.com/igl_amrit_/" id="dmButton" class="btn hidden" target="_blank">
+    🎮 Click here to DM The Gangsta
+  </a>
+
+  <footer>
+    DM Amrit to receive a special link 👀
+  </footer>
+
+  <script>
+    function revealNote() {
+      document.getElementById('note').classList.remove('hidden');
+      document.getElementById('dmButton').classList.remove('hidden');
+    }
+
+    // Display welcome alert when the page loads
+    window.onload = function() {
+      alert("Welcome to the OG'S Gift Fest");
+    };
+  </script>
+</body>
+</html>
