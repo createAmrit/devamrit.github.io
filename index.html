@@ -14,6 +14,7 @@
     }
 
     body {
+      background-color: #2c5364; /* Fallback color while the image loads */
       background: url('background.png') no-repeat center center fixed; /* Background image */
       background-size: cover; /* Ensure the image covers the entire background */
       color: #fff; /* Default text color */
@@ -23,6 +24,7 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
+      align-items: center; /* Center all elements horizontally */
       border: 10px solid #ffd700; /* Golden border */
       border-radius: 15px; /* Rounded corners */
       box-shadow: 0px 0px 20px rgba(255, 215, 0, 0.5); /* Glow effect */
@@ -43,16 +45,16 @@
     .btn {
       background: linear-gradient(to right, #ff7e5f, #feb47b); /* Gradient color for buttons */
       color: white;
-      padding: 8px 15px; /* Adjusted padding */
+      padding: 10px 20px; /* Adjusted padding for better alignment */
       border: none;
       border-radius: 50px;
-      font-size: 0.9rem; /* Adjusted font size */
+      font-size: 1rem; /* Adjusted font size */
       cursor: pointer;
       transition: all 0.3s ease;
       text-decoration: none;
       display: inline-block;
       margin: 10px;
-      min-width: 130px; /* Adjusted width for laptops */
+      min-width: 150px; /* Adjusted width for better alignment */
       box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
     }
 
@@ -75,6 +77,7 @@
       padding: 10px;
       border-radius: 10px;
       display: inline-block;
+      text-align: center; /* Center-align text inside the note */
     }
 
     footer {
@@ -86,6 +89,7 @@
       padding: 10px;
       border-radius: 10px;
       display: inline-block;
+      text-align: center; /* Center-align text inside the footer */
     }
 
     @keyframes fadeIn {
@@ -112,9 +116,9 @@
       }
 
       .btn {
-        font-size: 0.8rem; /* Further reduce font size for smaller screens */
-        padding: 6px 12px; /* Adjust padding */
-        min-width: 100px; /* Reduce button width for smaller screens */
+        font-size: 0.9rem; /* Further reduce font size for smaller screens */
+        padding: 8px 15px; /* Adjust padding */
+        min-width: 130px; /* Reduce button width for smaller screens */
       }
 
       #note {
@@ -132,25 +136,29 @@
 <body>
   <h1>🎁 Exclusive Gift Drop!</h1>
 
-  <button class="btn" onclick="revealNote()">🎁 Claim Your Gift</button>
+  <!-- First button visible initially -->
+  <button class="btn" onclick="revealContent()">🎁 Claim Your Gift</button>
 
+  <!-- Hidden content -->
   <p id="note" class="hidden">
     Just <strong>DM Amrit</strong> and tell him:<br /> 
     <em>"You're the best gamer of all time!"</em>
   </p>
 
-  <a href="https://www.instagram.com/igl_amrit_/" id="dmButton" class="btn hidden" target="_blank">
+  <a href="instagram://user?username=igl_amrit_" id="dmButton" class="btn hidden">
     🎮 Click here to DM The Gangsta
   </a>
 
-  <footer>
+  <footer class="hidden" id="footer">
     DM Amrit to receive a special link 👀
   </footer>
 
   <script>
-    function revealNote() {
+    function revealContent() {
+      // Reveal hidden elements
       document.getElementById('note').classList.remove('hidden');
       document.getElementById('dmButton').classList.remove('hidden');
+      document.getElementById('footer').classList.remove('hidden');
     }
 
     // Display welcome alert when the page loads
